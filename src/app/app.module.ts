@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotesComponent } from './notes/notes.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { NotesComponent } from './notes/notes.component';
         LoginComponent,
         RegisterComponent,
         UserComponent,
-        NotesComponent
+        NotesComponent,
+        CreateNoteComponent
     ],
     imports: [
         BrowserModule,
