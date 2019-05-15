@@ -4,6 +4,8 @@ import {TruncateModule} from '@yellowspot/ng-truncate';
 
 import { NotesComponent } from './notes.component';
 import {UserComponent} from '../user/user.component';
+import {FirebaseService} from '../firebase.service';
+import {FirebaseServiceStub} from '../testing/firebase-service-stub';
 import {AuthService} from '../core/auth.service';
 import {AuthServiceStub} from '../testing/auth-service-stub';
 import {hexToRgb} from '../testing/hex-to-rgb';
@@ -24,6 +26,10 @@ describe('NotesComponent', () => {
                 TruncateModule
             ],
             providers: [
+                {
+                    provide: FirebaseService,
+                    useValue: FirebaseServiceStub
+                },
                 {
                     provide: AuthService,
                     useValue: AuthServiceStub
