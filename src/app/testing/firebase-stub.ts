@@ -1,4 +1,5 @@
 export const firebaseAuthStub = {
+    successful: true,
     createUserWithEmailAndPassword(email: string, password: string){
         return new Promise((resolve, reject) => {
             if(email == 'user@mail.com' && password == 'secret'){
@@ -23,6 +24,16 @@ export const firebaseAuthStub = {
 
             reject(false);
         });
+    },
+    onAuthStateChanged(callback){
+        if(this.successful){
+            callback({
+                name: 'Test User',
+                provider: 'password'
+            });
+        }else{
+            callback(undefined);
+        }
     }
 };
 
